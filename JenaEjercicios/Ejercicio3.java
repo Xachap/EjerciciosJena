@@ -70,7 +70,7 @@ public class Ejercicio3 {
 		
 		// ** TAREA 3.3: Obtener todos los recursos con email **
 		System.out.println("------------------------");
-		Property email = model.getProperty("foaf:email");
+		Property email = model.getProperty("http://xmlns.com/foaf/0.1/email");
 		iter1 = model.listStatements(null, email, (RDFNode)null);
 
 		while (iter1.hasNext())
@@ -80,6 +80,7 @@ public class Ejercicio3 {
 			RDFNode mail = s.getObject();
 			System.out.println(r.getURI()+" ; Email -> "+mail.asLiteral());
 		}
+		
 		// ** TAREA 3.4 (avanzado): Obtener todos los subjects que conozcan a "Jane Smith" y mostrar sus given names ** 
 		System.out.println("------------------------");
 		iter1 = model.listStatements(null, VCARD.FN, "Jane Smith");
